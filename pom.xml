@@ -4,7 +4,7 @@
   <groupId>com.google</groupId>
   <artifactId>DevOps-7am</artifactId>
   <packaging>war</packaging>
-  <version>1.1</version>
+  <version>1.2</version>
   <name>DevOps-7am Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
