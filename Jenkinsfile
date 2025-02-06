@@ -1,24 +1,19 @@
-pipeline {
+pipeline{
     agent any
-    environment{
-        tomcat_ip = "172.31.42.250"
-        tomcat_user = "ec2-user"
-        deploy_folder = "/opt/tomcat10/webapps/"
-    }
-
-    stages {
-        stage('build'){
+    stages{
+        stage("Build"){
             steps{
-                sh 'mvn clean package'
+                sh "mvn clean package"
             }
         }
-        stage('deploy'){
+        stage("Deploy"){
             steps{
-              sshagent(['tomcat-deploy']) {
-              sh "scp -o StrictHostKeyChecking=no target/*.war $tomcat_user@$tomcat_ip:$deploy_folder"
-              sh "ssh $tomcat_user@$tomcat_ip /opt/tomcat10/bin/shutdown.sh"
-              sh "ssh $tomcat_user@$tomcat_ip /opt/tomcat10/bin/startup.sh"
-              }  
+                echo "deploy coming soon...."
+            }
+        }
+        stage("upload"){
+            steps{
+                echo "Uploading artifacts........"
             }
         }
     }
