@@ -7,11 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Git Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Tangala123/Devops-7am.git'
-            }
-        }
         stage('build'){
             steps{
                 sh 'mvn clean package'
